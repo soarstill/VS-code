@@ -1,0 +1,21 @@
+<script>
+    let sum = (a, b) => a + b;
+
+    let result = sum(10, 20);
+    console.log(result); // Output: 30
+    document.writeln(`Arrow 함수 실행결과 : ${result}`);
+
+    let n = prompt("얼마까지 더할까요?");
+    if (n) {
+        let sum = (n) => {
+            let total = 0;
+            for (let i = 1; i <= n; i++) {
+                total += i;
+            }
+            return total;
+        };
+
+        let result = sum(n);
+        document.writeln(`1부터 ${n}까지 합은 ${result}`);
+    }
+</script>

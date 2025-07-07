@@ -1,0 +1,33 @@
+<script>
+    function addNumber(num1, num2=4)
+    {
+        let sum = num1 + num2 ;
+        return sum;
+    }
+
+    function calcSum(n)
+    {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+        }
+        
+        return sum; }
+
+    let result = addNumber(2,3);
+    document.writeln(`두 수를 더한 값 : ${result}`);
+    
+    let n = prompt("얼마까지 더할까요?");
+    if (n !== null)
+    {
+        let sum = calcSum(n);
+        document.writeln(`1부터 ${n}까지 합은 ${sum}`);
+    } 
+
+    let sum = function(a,b) {
+        return a+b;
+    }
+    document.writeln(`함수 실행결과 : ${sum(10,20)}`);
+   
+   
+</script>
