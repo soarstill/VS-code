@@ -39,7 +39,6 @@ class EchoClient:
 
 
 import unittest
-
 class TestEchoClient(unittest.TestCase):
     def setUp(self):
         self.client = EchoClient()
@@ -58,10 +57,17 @@ class TestEchoClient(unittest.TestCase):
             time.sleep(1)  # Wait for 1 second before the next iteration
 
     def tearDown(self):
-        if not self.client == None:self.client.close()
-        print("Test completed and client closed.")
+        if not self.client == None:  
+            self.client.close()
+        print("TestEchoClient completed and client closed.")
         self.assertIsNone(self.client.socket, "Socket should be None after closing")
 
         
 if __name__ == "__main__":
-    unittest.main()
+    try:
+        unittest.main()
+    except KeyboardInterrupt:
+        print("Echo UDP client is down.")
+    finally:
+        pass
+
